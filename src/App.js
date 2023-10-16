@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Link as A, useLocation } from 'react-router-dom'
+
+import { AppContext } from './contexts/AppContext';
+
+import Router from "./Router";
 
 function App() {
+
+  const [user, setUser] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <AppContext.Provider
+      value={{}}
+    >
+      <header>
+        <A to={'/'}>Home</A>
+        <A to={'/auth/login'}>Login</A>
+        <A to={'/auth/register'}>Register</A>
+        <A to={'/auth/verify'}>Verify</A>
       </header>
-    </div>
+
+      <main>
+        <Router/>
+      </main>
+
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </AppContext.Provider>
   );
 }
 
