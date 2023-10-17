@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input {
+    @apply p-2 text-black rounded w-full;
+  }
+
+  .btn {
+    @apply rounded bg-slate-700 py-2 w-full;
+  }
+
+  .card {
+    @apply bg-slate-900 w-5/12 rounded p-6 mx-auto;
+  }
+}
